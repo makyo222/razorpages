@@ -1,0 +1,35 @@
+﻿@page
+@model WebApplication2.Pages.Barlangok.IndexModel
+
+<h2>Barlangok listája</h2>
+
+<form method="get">
+    <input type="text" name="SearchTelepules" value="@Model.SearchTelepules" placeholder="Település..." />
+    <button type="submit">Szűrés</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Név</th>
+            <th>Település</th>
+            <th>Hossz (m)</th>
+            <th>Kiterjedés</th>
+            <th>Mélység</th>
+            <th>Magasság</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.BarlangList)
+        {
+            <tr>
+                <td>@item.nev</td>
+                <td>@item.telepules</td>
+                <td>@item.hossz</td>
+                <td>@item.kiterjedes</td>
+                <td>@item.melyseg</td>
+                <td>@item.magassag</td>
+            </tr>
+        }
+    </tbody>
+</table>
